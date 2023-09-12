@@ -33,6 +33,25 @@ createApp({
       ],
     };
   },
+
+  // add methods for button pre and next
+  methods: {
+    next() {
+      this.activeImage++;
+      if (this.activeImage > this.slides.length - 1) {
+        this.activeImage = 0;
+      }
+      console.log(this.activeImage);
+    },
+
+    prev() {
+      this.activeImage--;
+      if (this.activeImage < 0) {
+        this.activeImage = this.slides.length - 1;
+      }
+      console.log(this.activeImage);
+    },
+  },
 }).mount("#app");
 
 /*Descrizione:
